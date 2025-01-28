@@ -97,32 +97,27 @@ ACTION_IF game_contains_tob THEN BEGIN
   // No Friendship
 
   COPY ~SarahToB/2DAs/BlankEpilogue.2da~ ~override/K#SARAD.2da~
-          REPLACE_TEXTUALLY ~PORTRAIT~ ~SARAHL~ // Their biggest portrait file
-          REPLACE 99999 @55  // The actual epilogue writing itself
+    REPLACE 99999 @55  // The actual epilogue writing itself
 
   // Friendship
 
   COPY ~SarahToB/2DAs/BlankEpilogue.2da~ ~override/K#SARAD1.2da~
-          REPLACE_TEXTUALLY ~PORTRAIT~ ~SARAHL~ // Their biggest portrait file
-          REPLACE 99999 @56  // The actual epilogue writing itself
+    REPLACE 99999 @56  // The actual epilogue writing itself
 
   // Friendship with god
 
   COPY ~SarahToB/2DAs/BlankEpilogue.2da~ ~override/K#SARAD2.2da~
-          REPLACE_TEXTUALLY ~PORTRAIT~ ~SARAHL~ // Their biggest portrait file
-          REPLACE 99999 @57  // The actual epilogue writing itself
+    REPLACE 99999 @57  // The actual epilogue writing itself
 
   // Romance
 
   COPY ~SarahToB/2DAs/BlankEpilogue.2da~ ~override/K#SARAD3.2da~
-          REPLACE_TEXTUALLY ~PORTRAIT~ ~SARAHL~ // Their biggest portrait file
-          REPLACE 99999 @58  // The actual epilogue writing itself
+    REPLACE 99999 @58  // The actual epilogue writing itself
 
   // Romance with god
 
   COPY ~SarahToB/2DAs/BlankEpilogue.2da~ ~override/K#SARAD4.2da~
-          REPLACE_TEXTUALLY ~PORTRAIT~ ~SARAHL~ // Their biggest portrait file
-          REPLACE 99999 @59  // The actual epilogue writing itself
+    REPLACE 99999 @59  // The actual epilogue writing itself
 
 
   // Adds Scripts
@@ -165,27 +160,23 @@ INCLUDE ~sarahtob/lib/cd_portrait_copy.tph~
 LAF cd_portrait_npc STR_VAR source = ~sarah~   destination = ~sarah~ source_path = ~sarahtob/portraits~ END
 
 
-	 // .2da appending, SoA style
-APPEND ~pdialog.2da~
-~K#Sarah K#SarahP K#SarahJ K#SarahD~
-UNLESS ~K#Sarah~
-UNLESS ~25POST~
+// .2da appending, SoA style
+APPEND ~pdialog.2da~ ~K#Sarah K#SarahP K#SarahJ K#SarahD~
+  UNLESS ~K#Sarah~
+  UNLESS ~25POST~
 
-APPEND ~interdia.2da~
-~K#Sarah K#SarahB~
-UNLESS ~K#Sarah~
-UNLESS ~25FILE~
+APPEND ~interdia.2da~ ~K#Sarah K#SarahB~
+  UNLESS ~K#Sarah~
+  UNLESS ~25FILE~
 
 // .2da appending, ToB style
-APPEND ~pdialog.2da~
-~K#Sarah K#SarahP K#SarahJ K#SarahD K#Sar25P K#Sar25J K#Sar25D K#Sara25~
-UNLESS ~K#Sarah~
-IF ~25POST~
+APPEND ~pdialog.2da~ ~K#Sarah K#SarahP K#SarahJ K#SarahD K#Sar25P K#Sar25J K#Sar25D K#Sara25~
+  UNLESS ~K#Sarah~
+  IF ~25POST~
 
-APPEND ~interdia.2da~
-~K#Sarah K#SarahB K#Sar25B~
-UNLESS ~K#Sarah~
-IF ~25FILE~
+APPEND ~interdia.2da~ ~K#Sarah K#SarahB K#Sar25B~
+  UNLESS ~K#Sarah~
+  IF ~25FILE~
 
 COPY_EXISTING ~k#sarah.cre~  ~override~
               ~k#sarah1.cre~ ~override~              
