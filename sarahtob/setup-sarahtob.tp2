@@ -20,12 +20,12 @@ ALWAYS
   END
 
   OUTER_SET enhanced_edition = 0  
+  OUTER_SET game_contains_tob = 1  
   OUTER_SPRINT ~tra_location~ ~sarahtob/translations~
 
   ACTION_IF GAME_IS ~bg2ee eet~ BEGIN 
 
-    OUTER_SET enhanced_edition = 1
-    
+    OUTER_SET enhanced_edition = 1   
     OUTER_SPRINT ~tra_location~ ~weidu_external/sarahtob/translations~
     
     ACTION_DEFINE_ARRAY fl#noconvert BEGIN END
@@ -40,7 +40,11 @@ ALWAYS
         reload_array = fl#reload
     END
     
-  END
+  END ELSE  
+  
+  ACTION_IF GAME_IS ~soa~ BEGIN  
+    OUTER_SET game_contains_tob = 0
+  END 
   
 END
 

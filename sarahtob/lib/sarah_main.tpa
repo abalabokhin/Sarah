@@ -12,48 +12,7 @@ CLEAR_IDS_MAP
 
 //Adding CRE files
 
-COPY ~SarahToB/CREs/k#SARAH.cre~ ~override/k#SARAH.cre~
-SAY NAME1 @1
-SAY NAME2 @1
-SAY MORALE @2
-SAY HAPPY @3
-SAY UNHAPPY_ANNOYED @4
-SAY UNHAPPY_SERIOUS @5
-SAY LEADER @6
-SAY TIRED @7
-SAY BORED @8
-SAY BATTLE_CRY1 @9
-SAY BATTLE_CRY2 @10
-SAY BATTLE_CRY3 @11
-SAY BATTLE_CRY4 @12
-SAY DAMAGE @13
-SAY DYING @14
-SAY HURT @15
-SAY AREA_FOREST @16
-SAY AREA_CITY @17
-SAY AREA_DUNGEON @18
-SAY AREA_DAY @19
-SAY AREA_NIGHT @20
-SAY SELECT_COMMON1 @21
-SAY SELECT_COMMON2 @22
-SAY SELECT_COMMON3 @23
-SAY SELECT_COMMON4 @24
-SAY SELECT_COMMON5 @25
-SAY SELECT_COMMON6 @26
-SAY SELECT_ACTION1 @27
-SAY SELECT_ACTION2 @28
-SAY SELECT_ACTION3 @29
-SAY SELECT_ACTION4 @30
-SAY SELECT_ACTION5 @31
-SAY SELECT_ACTION6 @32
-SAY SELECT_ACTION7 @33
-SAY SELECT_RARE1 @34
-SAY SELECT_RARE2 @35
-SAY CRITICAL_HIT @36
-SAY CRITICAL_MISS @37
-SAY TARGET_IMMUNE @38
-SAY INVENTORY_FULL @39
-SAY BIO @40
+COPY ~SarahToB/CREs/k#SARAH.cre~ ~override/k#SARAH.cre~ // soundsets done at end
 
 COPY ~SarahToB/CREs/k#GURIEN.cre~ ~override/k#GURIEN.cre~
 SAY NAME1 @41
@@ -121,108 +80,67 @@ COPY ~SarahToB/Items/K#SRHBDY.itm~ ~override~
 
 //ToB Stuff
 
-ACTION_IF FILE_EXISTS_IN_GAME ~mel01.cre~ THEN BEGIN
+ACTION_IF game_contains_tob THEN BEGIN
 
-//Adding CRE files
+  //Adding CRE files
 
-COPY ~SarahToB/CREs/K#SARAH1.cre~ ~override/K#SARAH1.cre~
-SAY NAME1 @1
-SAY NAME2 @1
-SAY MORALE @2
-SAY HAPPY @3
-SAY UNHAPPY_ANNOYED @4
-SAY UNHAPPY_SERIOUS @5
-SAY LEADER @6
-SAY TIRED @7
-SAY BORED @8
-SAY BATTLE_CRY1 @9
-SAY BATTLE_CRY2 @10
-SAY BATTLE_CRY3 @11
-SAY BATTLE_CRY4 @12
-SAY DAMAGE @13
-SAY DYING @14
-SAY HURT @15
-SAY AREA_FOREST @16
-SAY AREA_CITY @17
-SAY AREA_DUNGEON @18
-SAY AREA_DAY @19
-SAY AREA_NIGHT @20
-SAY SELECT_COMMON1 @21
-SAY SELECT_COMMON2 @22
-SAY SELECT_COMMON3 @23
-SAY SELECT_COMMON4 @24
-SAY SELECT_COMMON5 @25
-SAY SELECT_COMMON6 @26
-SAY SELECT_ACTION1 @27
-SAY SELECT_ACTION2 @28
-SAY SELECT_ACTION3 @29
-SAY SELECT_ACTION4 @30
-SAY SELECT_ACTION5 @31
-SAY SELECT_ACTION6 @32
-SAY SELECT_ACTION7 @33
-SAY SELECT_RARE1 @34
-SAY SELECT_RARE2 @35
-SAY CRITICAL_HIT @36
-SAY CRITICAL_MISS @37
-SAY TARGET_IMMUNE @38
-SAY INVENTORY_FULL @39
-SAY BIO @40
+  COPY ~SarahToB/CREs/K#SARAH1.cre~ ~override/K#SARAH1.cre~ // soundsets done at end
 
-COPY ~SarahToB/CREs/K#ANNA1.cre~ ~override/K#ANNA1.cre~
-SAY NAME1 @45
-SAY NAME2 @45
+  COPY ~SarahToB/CREs/K#ANNA1.cre~ ~override/K#ANNA1.cre~
+  SAY NAME1 @45
+  SAY NAME2 @45
 
-COPY ~SarahToB/CREs/K#LOVES.cre~ ~override/K#LOVES.cre~
-SAY NAME1 @54
-SAY NAME2 @54
+  COPY ~SarahToB/CREs/K#LOVES.cre~ ~override/K#LOVES.cre~
+  SAY NAME1 @54
+  SAY NAME2 @54
 
-// Adds Dialogue
-COMPILE ~SarahToB/Dialogues/K#Sara25.d~
-COMPILE ~SarahToB/Dialogues/K#Sar25B.d~
-COMPILE ~SarahToB/Dialogues/K#Sar25J.d~
-COMPILE ~SarahToB/Dialogues/K#Sar25P.d~
-COMPILE ~SarahToB/Dialogues/K#ANNA1.d~
-COMPILE ~SarahToB/Dialogues/K#LOVES.d~
+  // Adds Dialogue
+  COMPILE ~SarahToB/Dialogues/K#Sara25.d~
+  COMPILE ~SarahToB/Dialogues/K#Sar25B.d~
+  COMPILE ~SarahToB/Dialogues/K#Sar25J.d~
+  COMPILE ~SarahToB/Dialogues/K#Sar25P.d~
+  COMPILE ~SarahToB/Dialogues/K#ANNA1.d~
+  COMPILE ~SarahToB/Dialogues/K#LOVES.d~
 
-// Epilogues
+  // Epilogues
 
-// No Friendship
+  // No Friendship
 
-COPY ~SarahToB/2DAs/BlankEpilogue.2da~ ~override/K#SARAD.2da~
-        REPLACE_TEXTUALLY ~PORTRAIT~ ~SARAHL~ // Their biggest portrait file
-        REPLACE 99999 @55  // The actual epilogue writing itself
+  COPY ~SarahToB/2DAs/BlankEpilogue.2da~ ~override/K#SARAD.2da~
+          REPLACE_TEXTUALLY ~PORTRAIT~ ~SARAHL~ // Their biggest portrait file
+          REPLACE 99999 @55  // The actual epilogue writing itself
 
-// Friendship
+  // Friendship
 
-COPY ~SarahToB/2DAs/BlankEpilogue.2da~ ~override/K#SARAD1.2da~
-        REPLACE_TEXTUALLY ~PORTRAIT~ ~SARAHL~ // Their biggest portrait file
-        REPLACE 99999 @56  // The actual epilogue writing itself
+  COPY ~SarahToB/2DAs/BlankEpilogue.2da~ ~override/K#SARAD1.2da~
+          REPLACE_TEXTUALLY ~PORTRAIT~ ~SARAHL~ // Their biggest portrait file
+          REPLACE 99999 @56  // The actual epilogue writing itself
 
-// Friendship with god
+  // Friendship with god
 
-COPY ~SarahToB/2DAs/BlankEpilogue.2da~ ~override/K#SARAD2.2da~
-        REPLACE_TEXTUALLY ~PORTRAIT~ ~SARAHL~ // Their biggest portrait file
-        REPLACE 99999 @57  // The actual epilogue writing itself
+  COPY ~SarahToB/2DAs/BlankEpilogue.2da~ ~override/K#SARAD2.2da~
+          REPLACE_TEXTUALLY ~PORTRAIT~ ~SARAHL~ // Their biggest portrait file
+          REPLACE 99999 @57  // The actual epilogue writing itself
 
-// Romance
+  // Romance
 
-COPY ~SarahToB/2DAs/BlankEpilogue.2da~ ~override/K#SARAD3.2da~
-        REPLACE_TEXTUALLY ~PORTRAIT~ ~SARAHL~ // Their biggest portrait file
-        REPLACE 99999 @58  // The actual epilogue writing itself
+  COPY ~SarahToB/2DAs/BlankEpilogue.2da~ ~override/K#SARAD3.2da~
+          REPLACE_TEXTUALLY ~PORTRAIT~ ~SARAHL~ // Their biggest portrait file
+          REPLACE 99999 @58  // The actual epilogue writing itself
 
-// Romance with god
+  // Romance with god
 
-COPY ~SarahToB/2DAs/BlankEpilogue.2da~ ~override/K#SARAD4.2da~
-        REPLACE_TEXTUALLY ~PORTRAIT~ ~SARAHL~ // Their biggest portrait file
-        REPLACE 99999 @59  // The actual epilogue writing itself
+  COPY ~SarahToB/2DAs/BlankEpilogue.2da~ ~override/K#SARAD4.2da~
+          REPLACE_TEXTUALLY ~PORTRAIT~ ~SARAHL~ // Their biggest portrait file
+          REPLACE 99999 @59  // The actual epilogue writing itself
 
 
-// Adds Scripts
-COMPILE ~SarahToB/Scripts/K#Sara25.baf~
-COMPILE ~SarahToB/Scripts/K#Sar25D.baf~
-COMPILE ~SarahToB/Scripts/K#LOVES.baf~
-COMPILE ~SarahToB/Scripts/K#ANNA1.baf~
-EXTEND_TOP ~ar6200.bcs~ ~SarahToB/Scripts/AR6200.baf~
+  // Adds Scripts
+  COMPILE ~SarahToB/Scripts/K#Sara25.baf~
+  COMPILE ~SarahToB/Scripts/K#Sar25D.baf~
+  COMPILE ~SarahToB/Scripts/K#LOVES.baf~
+  COMPILE ~SarahToB/Scripts/K#ANNA1.baf~
+  EXTEND_TOP ~ar6200.bcs~ ~SarahToB/Scripts/AR6200.baf~
 END
 
 ACTION_IF GAME_IS ~eet~ BEGIN
@@ -280,3 +198,48 @@ APPEND ~interdia.2da~
 ~K#Sarah K#SarahB K#Sar25B~
 UNLESS ~K#Sarah~
 IF ~25FILE~
+
+COPY_EXISTING ~k#sarah.cre~  ~override~
+              ~k#sarah1.cre~ ~override~              
+  SAY NAME1 @1
+  SAY NAME2 @1
+  SAY MORALE @2
+  SAY HAPPY @3
+  SAY UNHAPPY_ANNOYED @4
+  SAY UNHAPPY_SERIOUS @5
+  SAY LEADER @6
+  SAY TIRED @7
+  SAY BORED @8
+  SAY BATTLE_CRY1 @9
+  SAY BATTLE_CRY2 @10
+  SAY BATTLE_CRY3 @11
+  SAY BATTLE_CRY4 @12
+  SAY DAMAGE @13
+  SAY DYING @14
+  SAY HURT @15
+  SAY AREA_FOREST @16
+  SAY AREA_CITY @17
+  SAY AREA_DUNGEON @18
+  SAY AREA_DAY @19
+  SAY AREA_NIGHT @20
+  SAY SELECT_COMMON1 @21
+  SAY SELECT_COMMON2 @22
+  SAY SELECT_COMMON3 @23
+  SAY SELECT_COMMON4 @24
+  SAY SELECT_COMMON5 @25
+  SAY SELECT_COMMON6 @26
+  SAY SELECT_ACTION1 @27
+  SAY SELECT_ACTION2 @28
+  SAY SELECT_ACTION3 @29
+  SAY SELECT_ACTION4 @30
+  SAY SELECT_ACTION5 @31
+  SAY SELECT_ACTION6 @32
+  SAY SELECT_ACTION7 @33
+  SAY SELECT_RARE1 @34
+  SAY SELECT_RARE2 @35
+  SAY CRITICAL_HIT @36
+  SAY CRITICAL_MISS @37
+  SAY TARGET_IMMUNE @38
+  SAY INVENTORY_FULL @39
+  SAY BIO @40
+  IF_EXISTS 
