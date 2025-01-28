@@ -3,8 +3,7 @@ INCLUDE ~sarahtob/lib/tob2soa.tph~
 
 // Adds that STATE stuff...not North Dakota though...
 
-APPEND ~STATE.IDS~ ~0x80101FEF CD_STATE_NOTVALID~
-UNLESS ~CD_STATE_NOTVALID~
+APPEND ~STATE.IDS~ ~0x80101FEF CD_STATE_NOTVALID~ UNLESS ~CD_STATE_NOTVALID~
 
 // force WeiDU to reload altered IDS files
 CLEAR_IDS_MAP
@@ -107,10 +106,6 @@ EXTEND_TOP ~BODHIAMB.bcs~ ~SarahToB/Scripts/BODHIAMB.baf~
 COMPILE ~SarahToB/Scripts/K#VMPSRH.baf~
 COMPILE ~SarahToB/Scripts/K#SCUT01.baf~
 EXTEND_BOTTOM ~AR0809.bcs~ ~SarahToB/Scripts/AR0809.baf~
-APPEND
-~STATE.IDS~
-~0x80101FEF CD_STATE_NOTVALID~
-UNLESS ~CD_STATE_NOTVALID~
 
 // Adds Items
 COPY ~SarahToB/Items/k#cure.itm~ ~override~
