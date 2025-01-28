@@ -29,36 +29,37 @@ COPY ~SarahToB/CREs/k#ANNA.cre~ ~override~
 // Adds Dialogue Files
 
 COMPILE EVALUATE_BUFFER ~SarahToB/Dialogues/K#Sarah.d~
-COMPILE ~SarahToB/Dialogues/K#SarahB.d~
-COMPILE ~SarahToB/Dialogues/K#VMPSRH.d~
+COMPILE                 ~SarahToB/Dialogues/K#SarahB.d~
+COMPILE                 ~SarahToB/Dialogues/K#VMPSRH.d~
 COMPILE EVALUATE_BUFFER ~SarahToB/Dialogues/K#SarahJ.d~
-COMPILE ~SarahToB/Dialogues/K#Gurie.d~
-COMPILE ~SarahToB/Dialogues/K#Anna.d~
+COMPILE                 ~SarahToB/Dialogues/K#Gurie.d~
+COMPILE                 ~SarahToB/Dialogues/K#Anna.d~
 
-ACTION_IF FILE_EXISTS_IN_GAME ~K#AurenB.dlg~
-THEN BEGIN
-COMPILE ~SarahToB/Dialogues/SarahAurenB.d~
+ACTION_IF FILE_EXISTS_IN_GAME ~K#AurenB.dlg~ THEN BEGIN
+  COMPILE ~SarahToB/Dialogues/SarahAurenB.d~
 END
 
 // Adds Scripts
-COMPILE ~SarahToB/Scripts/K#VMPSRH.baf~
-COMPILE ~SarahToB/Scripts/K#SarahD.baf~
+COMPILE                 ~SarahToB/Scripts/K#VMPSRH.baf~
+COMPILE                 ~SarahToB/Scripts/K#SarahD.baf~
 COMPILE EVALUATE_BUFFER ~SarahToB/Scripts/K#Sarah.baf~
-COMPILE ~SarahToB/Scripts/K#Anna.baf~
-COMPILE ~SarahToB/Scripts/K#Gurie.baf~
+COMPILE                 ~SarahToB/Scripts/K#Anna.baf~
+COMPILE                 ~SarahToB/Scripts/K#Gurie.baf~
+
 EXTEND_BOTTOM ~AR1100.bcs~ ~SarahToB/Scripts/AR1100.baf~
 
 ADD_JOURNAL EXISTING TITLE (#74337) @4 @11 @28 USING ~sarahtob/translations/%LANGUAGE%/k#vmpsrh.tra~
 
 
 // Vamp Thing
-COPY ~SarahToB/CREs/K#VMPSRH.cre~ ~override/K#VMPSRH.cre~
+COPY ~SarahToB/CREs/K#VMPSRH.cre~ ~override~
   SAY NAME1 @1
   SAY NAME2 @1
-ADD_CRE_ITEM ~VAMPREG~ #0 #0 #0 ~IDENTIFIED~ ~LRING~
-ADD_CRE_ITEM ~K#SRHBDY~ #0 #0 #0 ~IDENTIFIED~ ~QITEM1~
-EXTEND_TOP ~CLEANSE.bcs~ ~SarahToB/Scripts/CLEANSE.baf~
-EXTEND_TOP ~VAMPAMB.bcs~ ~SarahToB/Scripts/VAMPAMB.baf~
+  ADD_CRE_ITEM ~VAMPREG~ #0 #0 #0 ~IDENTIFIED~ ~LRING~
+  ADD_CRE_ITEM ~K#SRHBDY~ #0 #0 #0 ~IDENTIFIED~ ~QITEM1~
+  
+EXTEND_TOP ~CLEANSE.bcs~  ~SarahToB/Scripts/CLEANSE.baf~
+EXTEND_TOP ~VAMPAMB.bcs~  ~SarahToB/Scripts/VAMPAMB.baf~
 EXTEND_TOP ~BODHIAMB.bcs~ ~SarahToB/Scripts/BODHIAMB.baf~
 COMPILE ~SarahToB/Scripts/K#VMPSRH.baf~
 COMPILE ~SarahToB/Scripts/K#SCUT01.baf~
@@ -77,7 +78,6 @@ COPY ~SarahToB/Items/K#SRHBDY.itm~ ~override~
  SAY DESC @53
 
 //ToB Stuff
-
 ACTION_IF game_contains_tob THEN BEGIN
 
   //Adding CRE files
