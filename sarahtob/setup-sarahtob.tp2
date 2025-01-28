@@ -1,16 +1,13 @@
-BACKUP ~SarahToB/backup~
-AUTHOR ~theacefes (theacefes@gibberlings3.net)~
+BACKUP ~weidu_external/sarahtob/backup~
+SUPPORT ~https://www.gibberlings3.net/forums/forum/135-sarah/~
 
 VERSION ~6~
 README ~SarahToB/readme-sarahtob.html~
 
 //MODDER
 
-// Translations
-AUTO_TRA ~sarahtob/translations/%s~
-
-// Code borrowed from Edwin Romance V206, using the new HANDLE_CHARSETS function
 ALWAYS
+
   ACTION_IF GAME_IS ~eet~ BEGIN
     OUTER_SET bg2_chapter = 12
   END ELSE BEGIN
@@ -22,18 +19,33 @@ ALWAYS
     OUTER_SET EVAL ~%name_source%~ = bg2_chapter
   END
 
-  ACTION_DEFINE_ARRAY fl#noconvert BEGIN END
-  ACTION_DEFINE_ARRAY fl#reload BEGIN setup END
-  LAF HANDLE_CHARSETS
-    INT_VAR
-      infer_charsets = 1
-    STR_VAR
-      tra_path = EVAL ~%MOD_FOLDER%/translations~
-      // charset_table = fl#charsets // Included for illustrative purposes.
-      noconvert_array = fl#noconvert
-      reload_array = fl#reload
+  OUTER_SET enhanced_edition = 0  
+  OUTER_SPRINT ~tra_location~ ~sarahtob/translations~
+
+  ACTION_IF GAME_IS ~bg2ee eet~ BEGIN 
+
+    OUTER_SET enhanced_edition = 1
+    
+    OUTER_SPRINT ~tra_location~ ~weidu_external/sarahtob/translations~
+    
+    ACTION_DEFINE_ARRAY fl#noconvert BEGIN END
+    ACTION_DEFINE_ARRAY fl#reload BEGIN setup END
+    LAF HANDLE_CHARSETS
+      INT_VAR
+        infer_charsets = 1
+      STR_VAR
+        tra_path = ~sarahtob/translations~
+        out_patch = ~weidu_external/sarahtob/translations~
+        noconvert_array = fl#noconvert
+        reload_array = fl#reload
+    END
+    
   END
+  
 END
+
+// Translations
+AUTO_TRA ~%tra_location%/%s~
 
 
 LANGUAGE ~English~
@@ -41,9 +53,11 @@ LANGUAGE ~English~
          ~sarahtob/translations/english/setup.tra~
 LANGUAGE ~French (by Le Marquis from Les d'Oghmatiques)~
          ~french~
+         ~sarahtob/translations/english/setup.tra~
          ~sarahtob/translations/french/setup.tra~
 LANGUAGE ~Russian (by tipun)~
          ~russian~
+         ~sarahtob/translations/english/setup.tra~
          ~sarahtob/translations/russian/setup.tra~
 BEGIN @0
 
