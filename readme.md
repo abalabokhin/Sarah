@@ -1,7 +1,7 @@
 ![Latest Release](https://img.shields.io/github/v/release/Gibberlings3/Sarah?include_prereleases&color=blue) 
 ![GitHub (Pre-)Release Date](https://img.shields.io/github/release-date-pre/Gibberlings3/Sarah?color=gold)
 ![Platform](https://img.shields.io/static/v1?label=platform&message=windows%20%7C%20macOS%20%7C%20linux%20%7C%20Project%20Infinity&color=informational)
-![Language](https://img.shields.io/static/v1?label=language&message=English%20%7C%20French&color=limegreen)
+![Language](https://img.shields.io/static/v1?label=language&message=English%20%7C%20French%20%7C%20Russian&color=limegreen)
 ![Supported games](https://img.shields.io/static/v1?label=supported%20games&message=BG2(ToB)%20%7C%20BG2EE%20%7C%20BGT%20%7C%20EET&color=dodgerblue)
 
 ![The G3 Logo](https://raw.githubusercontent.com/Gibberlings3/.github/master/profile/g3_neutral.png)
@@ -11,6 +11,10 @@
 ## Overview
 
 It has always been a belief of mine that there are not enough rangers in Baldur's Gate II, nor are there enough opportunities to interact with them. This mod will add Sarah, a young but independent ranger to Baldur's Gate II.
+
+The Sarah NPC Romance Mod contains a female/female romance which is considered to be rated T for Teen material. Please do not play this mod if this type of content offends you.
+
+The mod is directly compatible with all BG2 games: BGII, BGT, BGII:EE, and EET.
 
 ## More Information
 
