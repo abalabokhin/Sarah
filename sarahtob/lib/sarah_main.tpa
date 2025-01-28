@@ -12,21 +12,19 @@ CLEAR_IDS_MAP
 
 //Adding CRE files
 
-COPY ~SarahToB/CREs/k#SARAH.cre~ ~override/k#SARAH.cre~ // soundsets done at end
+COPY ~SarahToB/CREs/k#SARAH.cre~ ~override~ // soundsets done at end
 
-COPY ~SarahToB/CREs/k#GURIEN.cre~ ~override/k#GURIEN.cre~
-SAY NAME1 @41
-SAY NAME2 @41
-SAY SELECT_COMMON1 @42
-SAY SELECT_COMMON2 @43
-SAY SELECT_COMMON3 ~ ~
+COPY ~SarahToB/CREs/k#GURIEN.cre~ ~override~
+  SAY NAME1 @41
+  SAY NAME2 @41
+  SAY SELECT_COMMON1 @42
+  SAY SELECT_COMMON2 @43
 
-COPY ~SarahToB/CREs/k#ANNA.cre~ ~override/k#ANNA.cre~
-SAY NAME1 @45
-SAY NAME2 @45
-SAY SELECT_COMMON1 @46
-SAY SELECT_COMMON2 @47
-SAY SELECT_COMMON3 ~ ~
+COPY ~SarahToB/CREs/k#ANNA.cre~ ~override~
+  SAY NAME1 @45
+  SAY NAME2 @45
+  SAY SELECT_COMMON1 @46
+  SAY SELECT_COMMON2 @47
 
 // Adds Dialogue Files
 
