@@ -157,16 +157,13 @@ END
 
 COPY ~SarahToB/audio/K#blank.mus~ ~music~
 COPY_EXISTING ~songlist.2da~ ~override~
-SET_2DA_ENTRY 0 2 3 ~K#BLANK.MUS~
+  SET_2DA_ENTRY 0 2 3 ~K#BLANK.MUS~
 
 
 // Adds Portraits
+INCLUDE ~sarahtob/lib/cd_portrait_copy.tph~
+LAF cd_portrait_npc STR_VAR source = ~sarah~   destination = ~sarah~ source_path = ~sarahtob/portraits~ END
 
-ACTION_IF GAME_IS ~bg2ee eet~ BEGIN
-COPY ~SarahToB/Portraits/ee~ ~override~
-END ELSE BEGIN
-COPY ~SarahToB/Portraits/bg2~ ~override~
-END
 
 	 // .2da appending, SoA style
 APPEND ~pdialog.2da~
