@@ -35,7 +35,7 @@ ALWAYS
         infer_charsets = 1
       STR_VAR
         tra_path = ~sarahtob/translations~
-        out_patch = ~weidu_external/sarahtob/translations~
+        out_path = ~weidu_external/sarahtob/translations~
         noconvert_array = fl#noconvert
         reload_array = fl#reload
     END
@@ -66,3 +66,4 @@ LANGUAGE ~Russian (by tipun)~
 BEGIN @0
 
 INCLUDE ~sarahtob/lib/sarah_main.tpa~
+LAF HANDLE_AUDIO END

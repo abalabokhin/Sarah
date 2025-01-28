@@ -13,18 +13,13 @@ CLEAR_IDS_MAP
 //Adding CRE files
 
 COPY ~SarahToB/CREs/k#SARAH.cre~ ~override~ // soundsets done at end
+     ~SarahToB/CREs/k#ANNA.cre~  ~override~ // soundsets done at end
 
 COPY ~SarahToB/CREs/k#GURIEN.cre~ ~override~
   SAY NAME1 @41
   SAY NAME2 @41
   SAY SELECT_COMMON1 @42
   SAY SELECT_COMMON2 @43
-
-COPY ~SarahToB/CREs/k#ANNA.cre~ ~override~
-  SAY NAME1 @45
-  SAY NAME2 @45
-  SAY SELECT_COMMON1 @46
-  SAY SELECT_COMMON2 @47
 
 // Adds Dialogue Files
 
@@ -82,15 +77,12 @@ ACTION_IF game_contains_tob THEN BEGIN
 
   //Adding CRE files
 
-  COPY ~SarahToB/CREs/K#SARAH1.cre~ ~override/K#SARAH1.cre~ // soundsets done at end
+  COPY ~SarahToB/CREs/K#SARAH1.cre~ ~override~ // soundsets done at end
+       ~SarahToB/CREs/K#ANNA1.cre~  ~override~
 
-  COPY ~SarahToB/CREs/K#ANNA1.cre~ ~override/K#ANNA1.cre~
-  SAY NAME1 @45
-  SAY NAME2 @45
-
-  COPY ~SarahToB/CREs/K#LOVES.cre~ ~override/K#LOVES.cre~
-  SAY NAME1 @54
-  SAY NAME2 @54
+  COPY ~SarahToB/CREs/K#LOVES.cre~ ~override.cre~
+    SAY NAME1 @54
+    SAY NAME2 @54
 
   // Adds Dialogue
   COMPILE ~SarahToB/Dialogues/K#Sara25.d~
@@ -139,24 +131,26 @@ ACTION_IF game_contains_tob THEN BEGIN
   COMPILE ~SarahToB/Scripts/K#LOVES.baf~
   COMPILE ~SarahToB/Scripts/K#ANNA1.baf~
   EXTEND_TOP ~ar6200.bcs~ ~SarahToB/Scripts/AR6200.baf~
-END
 
-ACTION_IF GAME_IS ~eet~ BEGIN
-  INCLUDE ~EET/other/EET_functions.tph~
-  LAF ~EET_NPC_TRANSITION~
-    INT_VAR
-      type = 2
-    STR_VAR
-      dv = "K#SARAH"
-      override_SoA = "K#SARAH"
-      override_ToB = "K#SARA25"
-      dialog_ToB = "K#SARA25"
-      traFile = EVAL "SarahToB/translations/%LANGUAGE%/k#fates.tra"
-      string = "@1" //Bring me Sarah, the human ranger.
-      stringPosDV = "SharTeel"
+  // fate spirit
+  ACTION_IF GAME_IS ~eet~ BEGIN
+    INCLUDE ~EET/other/EET_functions.tph~
+    LAF ~EET_NPC_TRANSITION~
+      INT_VAR
+        type = 2
+      STR_VAR
+        dv = "K#SARAH"
+        override_SoA = "K#SARAH"
+        override_ToB = "K#SARA25"
+        dialog_ToB = "K#SARA25"
+        traFile = EVAL "SarahToB/translations/%LANGUAGE%/k#fates.tra"
+        string = "@1" //Bring me Sarah, the human ranger.
+        stringPosDV = "SharTeel"
+    END
+  END ELSE BEGIN
+    COMPILE ~SarahToB/Dialogues/K#fates.d~
   END
-END ELSE BEGIN
-  COMPILE ~SarahToB/Dialogues/K#fates.d~
+
 END
 
 //Adds Sounds
@@ -165,7 +159,6 @@ COPY ~SarahToB/audio/K#blank.mus~ ~music~
 COPY_EXISTING ~songlist.2da~ ~override~
 SET_2DA_ENTRY 0 2 3 ~K#BLANK.MUS~
 
-LAF HANDLE_AUDIO END
 
 // Adds Portraits
 
@@ -240,4 +233,12 @@ COPY_EXISTING ~k#sarah.cre~  ~override~
   SAY TARGET_IMMUNE @38
   SAY INVENTORY_FULL @39
   SAY BIO @40
+  IF_EXISTS 
+
+COPY_EXISTING ~k#ANNA.cre~  ~override~ // soundsets done at end
+              ~K#ANNA1.cre~ ~override~
+  SAY NAME1 @45
+  SAY NAME2 @45
+  SAY SELECT_COMMON1 @46
+  SAY SELECT_COMMON2 @47
   IF_EXISTS 
