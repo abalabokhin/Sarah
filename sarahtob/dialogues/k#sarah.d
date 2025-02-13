@@ -66,7 +66,7 @@ CHAIN
 IF ~~ THEN K#Sarah SarahIntro1-1-1-1
 @24
 = @25
-DO ~EscapeArea()MoveBetweenAreas("AR1105",[686.497],1)~
+DO ~EscapeAreaMove("AR1105",686,497,1)~
 EXIT
 
 CHAIN
@@ -83,7 +83,7 @@ CHAIN
 IF ~~ THEN K#Sarah SarahIntro1-1-2-1
 @24
 = @25
-DO ~EscapeArea()MoveBetweenAreas("AR1105",[686.497],1)~
+DO ~EscapeAreaMove("AR1105",686,497,1)~
 EXIT
 
 CHAIN
@@ -100,7 +100,7 @@ CHAIN
 IF ~~ THEN K#Sarah SarahIntro1-1-3-1
 @24
 = @25
-DO ~EscapeArea()MoveBetweenAreas("AR1105",[686.497],1)~
+DO ~EscapeAreaMove("AR1105",686,497,1)~
 EXIT
 
 
@@ -156,7 +156,7 @@ CHAIN
 IF ~~ THEN K#Sarah SarahIntro3-1-1-1
 @24
 = @25
-DO ~EscapeArea()MoveBetweenAreas("AR1105",[686.497],1)~
+DO ~EscapeAreaMove("AR1105",686,497,1)~
 EXIT
 
 CHAIN
@@ -173,7 +173,7 @@ CHAIN
 IF ~~ THEN K#Sarah SarahIntro3-1-2-1
 @24
 = @25
-DO ~EscapeArea()MoveBetweenAreas("AR1105",[686.497],1)~
+DO ~EscapeAreaMove("AR1105",686,497,1)~
 EXIT
 
 CHAIN
@@ -190,7 +190,7 @@ CHAIN
 IF ~~ THEN K#Sarah SarahIntro3-1-3-1
 @24
 = @25
-DO ~EscapeArea()MoveBetweenAreas("AR1105",[686.497],1)~
+DO ~EscapeAreaMove("AR1105",686,497,1)~
 EXIT
 
 //Fourth Response
@@ -244,7 +244,7 @@ END
 
 IF ~~ THEN BEGIN Goodbye
 SAY @50
-IF ~~ THEN REPLY @51 DO ~SetGlobal("K#SarahJoined","LOCALS",0)EscapeArea()MoveBetweenAreas("AR1105",[686.497],1)~ EXIT
+IF ~~ THEN REPLY @51 DO ~SetGlobal("K#SarahJoined","LOCALS",0)EscapeAreaMove("AR1105",686,497,1)~ EXIT
 IF ~~ THEN REPLY @52 GOTO StayHere
 END
 

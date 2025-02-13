@@ -1362,7 +1362,7 @@ IF ~~ THEN K#SarahB SLT12-2-2
 @470
 = @471
 = @472
-DO ~SetGlobal("K#SarahRomanceActive","GLOBAL",3) SetGlobal("K#SarahFriendshipActive","GLOBAL",3) SetGlobal("K#SarahJoined","LOCALS",0) LeaveParty() DropInventory() EscapeArea() RestParty()~
+DO ~SetGlobal("K#SarahRomanceActive","GLOBAL",3) SetGlobal("K#SarahFriendshipActive","GLOBAL",3) SetGlobal("K#SarahJoined","LOCALS",0) LeaveParty() DropInventory() RestParty() EscapeArea()~
 EXIT
 
 CHAIN
@@ -1378,7 +1378,7 @@ IF ~~ THEN K#SarahB SLT12Angry
 @477
 = @478
 = @479
-DO ~SetGlobal("K#SarahRomanceActive","GLOBAL",3) SetGlobal("K#SarahFriendshipActive","GLOBAL",3) SetGlobal("K#SarahJoined","LOCALS",0) LeaveParty() DropInventory() EscapeArea() RestParty()~
+DO ~SetGlobal("K#SarahRomanceActive","GLOBAL",3) SetGlobal("K#SarahFriendshipActive","GLOBAL",3) SetGlobal("K#SarahJoined","LOCALS",0) LeaveParty() DropInventory() RestParty() EscapeArea()~
 EXIT
 
 CHAIN
@@ -1468,7 +1468,7 @@ IF ~~ THEN K#SarahB SLT13Pissed
 = @519
 = @520
 = @521
-DO ~SetGlobal("K#SarahRomanceActive","GLOBAL",3) SetGlobal("K#SarahFriendshipActive","GLOBAL",3) SetGlobal("K#SarahJoined","LOCALS",0) LeaveParty() DropInventory() EscapeArea() RestParty()~
+DO ~SetGlobal("K#SarahRomanceActive","GLOBAL",3) SetGlobal("K#SarahFriendshipActive","GLOBAL",3) SetGlobal("K#SarahJoined","LOCALS",0) LeaveParty() DropInventory() RestParty() EscapeArea()~
 EXIT
 
 CHAIN
@@ -1544,7 +1544,7 @@ IF ~~ THEN K#SarahB SLT14ReallyBad
 = @555
 = @556
 = @479
-DO ~SetGlobal("K#SarahRomanceActive","GLOBAL",3) SetGlobal("K#SarahFriendshipActive","GLOBAL",3) SetGlobal("K#SarahJoined","LOCALS",0) LeaveParty() DropInventory() EscapeArea() RestParty()~
+DO ~SetGlobal("K#SarahRomanceActive","GLOBAL",3) SetGlobal("K#SarahFriendshipActive","GLOBAL",3) SetGlobal("K#SarahJoined","LOCALS",0) LeaveParty() DropInventory() RestParty() EscapeArea()~
 EXIT
 
 CHAIN
@@ -1576,7 +1576,7 @@ CHAIN
 IF ~~ THEN K#SarahB SLT15-3
 @567
 = @568
-DO ~SetGlobal("K#SarahRomanceActive","GLOBAL",3) SetGlobal("K#SarahFriendshipActive","GLOBAL",3) SetGlobal("K#SarahJoined","LOCALS",0) LeaveParty() DropInventory() EscapeArea() RestParty()~
+DO ~SetGlobal("K#SarahRomanceActive","GLOBAL",3) SetGlobal("K#SarahFriendshipActive","GLOBAL",3) SetGlobal("K#SarahJoined","LOCALS",0) LeaveParty() DropInventory() RestParty() EscapeArea()~
 EXIT
 
 CHAIN
