@@ -61,8 +61,8 @@ LANGUAGE ~French (by Le Marquis from Les d'Oghmatiques)~
          ~sarahtob/translations/french/setup.tra~
 LANGUAGE ~Russian (by tipun)~
          ~russian~
-         ~%tra_location%/english/setup.tra~
-         ~%tra_location%/russian/setup.tra~
+         ~sarahtob/translations/english/setup.tra~
+         ~sarahtob/translations/russian/setup.tra~
          
 BEGIN @60 DESIGNATED 0
 SUBCOMPONENT @0
